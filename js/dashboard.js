@@ -462,6 +462,10 @@ filterStatus.addEventListener(
 displayTasks();
 function goToTasks(){
 
+    filterStatus.value = "All";
+
+    displayTasks();
+
     document
     .getElementById("tasksSection")
     .scrollIntoView({
