@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DieuTask - Sign Up</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<div class="auth-container">
+
+    <div class="auth-left">
+        <h1>DieuTask</h1>
+
+        <p>
+            Organize your work, manage tasks efficiently,
+            and boost your productivity with ease.
+        </p>
+
+        <div class="illustration">
+            <i class="fa-solid fa-list-check"></i>
+        </div>
+    </div>
+
+    <div class="auth-right">
+
+        <form id="signupForm" class="auth-card">
+
+            <h2>Create Account</h2>
+
+            <div class="input-group">
+                <label>Full Name</label>
+                <input
+                    type="text"
+                    id="fullName"
+                    placeholder="Enter your full name"
+                    required>
+            </div>
+
+            <div class="input-group">
+                <label>Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Create password"
+                    required>
+            </div>
+
+            <div class="input-group">
+                <label>Confirm Password</label>
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm password"
+                    required>
+            </div>
+
+            <button type="submit" class="btn-primary">
+                Create Account
+            </button>
+
+            <p class="auth-link">
+                Already have an account?
+                <a href="index.html">Login</a>
+            </p>
+
+        </form>
+
+    </div>
+
+</div>
+
+<div id="toast"></div>
+
+<script src="js/auth.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DieuTask Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        DieuTask
+    </div>
+
+    <div class="nav-links">
+        <a href="#">Dashboard</a>
+        <a href="#" onclick="goToTasks()">
+            Tasks
+        </a>
+        <button id="logoutBtn" class="btn-danger">
+            Logout
+        </button>
+    </div>
+
+</nav>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-text">
+
+            <h1 id="welcomeMessage">
+                Welcome Back
+            </h1>
+            <p id="currentDate"></p>
+            <p>
+                Organize your work, track progress,
+                and stay productive with DieuTask.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button
+                    class="btn-primary"
+                    onclick="goToAddTask()">
+
+                    + Add Task
+
+                </button>
+
+                <button
+                    class="btn-search"
+                    onclick="goToSearch()">
+
+                    🔍 Search Tasks
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+            <i class="fa-solid fa-list-check"></i>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="stats">
+
+    <div class="stat-card">
+        <h3>Total Tasks</h3>
+        <h2 id="totalTasks">0</h2>
+    </div>
+
+    <div class="stat-card">
+        <h3>Pending</h3>
+        <h2 id="pendingTasks">0</h2>
+    </div>
+
+    <div class="stat-card">
+        <h3>On Hold</h3>
+        <h2 id="holdTasks">0</h2>
+    </div>
+
+    <div class="stat-card">
+        <h3>Completed</h3>
+        <h2 id="completedTasks">0</h2>
+    </div>
+
+</section>
+
+<!-- SEARCH & FILTER -->
+
+<section
+    class="search-section"
+    id="searchSection">
+
+    <div class="task-controls">
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search tasks...">
+
+        </div>
+
+        <select id="filterStatus">
+
+            <option value="All">
+                All Tasks
+            </option>
+
+            <option value="Pending">
+                Pending
+            </option>
+
+            <option value="On Hold">
+                On Hold
+            </option>
+
+            <option value="Completed">
+                Completed
+            </option>
+
+        </select>
+
+    </div>
+
+</section>
+
+<!-- TASK CARDS -->
+
+<section class="task-section" id="tasksSection">
+
+    <div
+        id="taskContainer"
+        class="task-grid">
+
+    </div>
+
+    <div
+        id="emptyState"
+        class="empty-state">
+
+        <i class="fa-solid fa-clipboard-list"></i>
+
+        <h2>No Tasks Yet</h2>
+
+        <p>
+          Start by creating your first task and
+          organize your workflow efficiently.
+        </p>
+
+        <button
+            class="btn-primary"
+            onclick="goToAddTask()">
+
+            Create Task
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ADD TASK -->
+
+<section
+    class="task-form-section"
+    id="addTaskSection">
+
+    <div class="task-form">
+
+        <h2>Add New Task</h2>
+
+        <div class="input-group">
+
+            <label>Task Title</label>
+
+            <input
+                type="text"
+                id="taskTitle"
+                placeholder="Enter task title">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Description</label>
+
+            <textarea
+                id="taskDescription"
+                rows="5"
+                placeholder="Enter task description"></textarea>
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Status</label>
+
+            <select id="taskStatus">
+
+                <option value="Pending">
+                    Pending
+                </option>
+
+                <option value="On Hold">
+                    On Hold
+                </option>
+
+                <option value="Completed">
+                    Completed
+                </option>
+
+            </select>
+
+        </div>
+
+        <button
+            id="addTaskBtn"
+            class="btn-primary">
+
+            Add Task
+
+        </button>
+
+    </div>
+
+</section>
+<div id="deleteModal" class="modal">
+
+    <div class="modal-content">
+
+        <h3>Delete Task?</h3>
+
+        <p>
+            Are you sure you want to delete this task?
+        </p>
+
+        <div class="modal-buttons">
+
+            <button
+                id="confirmDelete"
+                class="btn-danger">
+
+                Delete
+
+            </button>
+
+            <button
+                class="btn-search"
+                onclick="closeModal()">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="toast"></div>
+
+<script src="js/auth.js"></script>
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>
