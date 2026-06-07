@@ -53,20 +53,38 @@
 
             <div class="input-group">
                 <label>Password</label>
-                <input
-                    type="password"
-                    id="password"
-                    placeholder="Create password"
-                    required>
+                <div class="password-wrapper">
+
+                   <input
+                       type="password"
+                       id="password"
+                       placeholder="Create password"
+                       required>
+
+                   <i
+                       class="fa-solid fa-eye"
+                       id="togglePassword">
+                   </i>
+
+                </div>
             </div>
 
             <div class="input-group">
                 <label>Confirm Password</label>
-                <input
-                    type="password"
-                    id="confirmPassword"
-                    placeholder="Confirm password"
-                    required>
+                <div class="password-wrapper">
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm password"
+                        required>
+
+                    <i
+                        class="fa-solid fa-eye"
+                        id="toggleConfirmPassword">
+                    </i>
+
+                 </div>
             </div>
 
             <button type="submit" class="btn-primary">
